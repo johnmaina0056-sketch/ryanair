@@ -189,17 +189,649 @@ iframe{
         font-size:20px;
     }
 
+/* ==========================
+   TOP HEADER
+========================== */
+
+.top{
+    width:100%;
+    background:#003b95;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:10px 4%;
+    flex-wrap:wrap;
+}
+
+
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#fff;
+    font-size:22px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+
+.nav-menu a{
+    display:flex;
+    align-items:center;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:500;
+
+    white-space:nowrap;
+}
+
+
+.nav-menu a:hover{
+    color:#ffd800;
+}
+
+
+
+/* ==========================
+   PORTAL BUTTON
+========================== */
+
+.portal{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ffd800;
+    color:#000;
+
+    border:none;
+
+    padding:9px 18px;
+
+    border-radius:20px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+}
+
+
+.portal:hover{
+
+    background:#ffea4d;
+
+}
+
+
+
+/* ==========================
+   TABS
+========================== */
+
+.tabs{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-top:20px;
+
+}
+
+
+.tab{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#ccc;
+
+    padding:10px 5px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+}
+
+
+.tab.active{
+
+    color:white;
+
+    border-bottom:3px solid #ffd800;
+
+}
+
+
+
+/* ==========================
+   TRIP OPTIONS
+========================== */
+
+.trip-options{
+
+    margin-top:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+.trip-options b{
+
+    background:#ffd800;
+
+    color:#003b95;
+
+    padding:5px 10px;
+
+    border-radius:4px;
+
+}
+
+
+
+/* ==========================
+   SEARCH AREA
+========================== */
+
+.search-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:25px;
+
+    width:100%;
+
+}
+
+
+.field{
+
+    background:white;
+
+    color:#111;
+
+    height:58px;
+
+    flex:1;
+
+    padding:8px 18px;
+
+    border-radius:6px;
+
+}
+
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
 
     .nav-menu{
-        width:100%;
+
+        gap:10px;
+
+    }
+
+
+    .tabs{
+
+        gap:18px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+
+    .top{
+
+        flex-direction:column;
+
+        align-items:center;
+
         justify-content:center;
-        gap:6px;
+
+        padding:12px;
+
+        gap:12px;
+
+    }
+
+
+    .nav-menu{
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:8px;
+
+    }
+
+
+    .tabs{
+
+        width:100%;
+
+        justify-content:center;
+
+        margin-top:10px;
+
+    }
+
+
+    .search-area{
+
+        flex-direction:column;
+
+    }
+
+
+    .field{
+
+        width:100%;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+
+    body{
+
+        font-size:14px;
+
+    }
+
+
+    .nav-menu{
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        width:100%;
+
+    }
+
+
+    .nav-menu a{
+
+        justify-content:center;
+
+        padding:8px;
+
+        background:rgba(255,255,255,.08);
+
+        border-radius:5px;
+
     }
 
 
     .portal{
-        width:auto;
-        margin-top:5px;
+
+        width:100%;
+
+        grid-column:1/-1;
+
+    }
+
+
+    .tabs{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+
+    .trip-options{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   VERY SMALL PHONES
+========================== */
+
+@media(max-width:360px){
+
+
+    .logo{
+
+        font-size:18px;
+
+    }
+
+
+    .portal{
+
+        font-size:13px;
+
+    }
+
+}
+
+/* ==========================
+   SEARCH FIELDS
+========================== */
+
+.field small{
+    color:#777;
+    font-size:13px;
+}
+
+
+.field p{
+    margin:5px 0;
+    font-size:18px;
+    font-weight:500;
+}
+
+
+.gray{
+    color:#777;
+}
+
+
+
+/* Swap Button */
+
+.swap{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+
+    color:#777;
+
+    height:55px;
+
+    width:55px;
+
+    border-radius:50%;
+
+    font-size:18px;
+
+}
+
+
+
+/* Search Button */
+
+.search{
+
+    height:55px;
+
+    min-width:220px;
+
+    padding:0 25px;
+
+    background:#ffd800;
+
+    color:#003b95;
+
+    border:0;
+
+    border-radius:6px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.search:hover{
+
+    background:#ffea4d;
+
+}
+
+
+
+/* ==========================
+   FILTERS
+========================== */
+
+.filters{
+
+    margin-top:15px;
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.filters button{
+
+    background:transparent;
+
+    border:1px solid #aaa;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:5px;
+
+}
+
+
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+
+    width:100%;
+
+    height:360px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+.hero-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+.hero-text{
+
+    position:absolute;
+
+    top:50%;
+
+    left:5%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+}
+
+
+
+.hero h1{
+
+    margin:0;
+
+    font-size:clamp(35px,6vw,70px);
+
+    line-height:1.1;
+
+}
+
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
+
+    .search{
+
+        min-width:180px;
+
+    }
+
+
+    .hero{
+
+        height:300px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+
+    .field{
+
+        width:100%;
+
+        height:55px;
+
+    }
+
+
+    .swap{
+
+        transform:rotate(90deg);
+
+    }
+
+
+    .search{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
+
+    .hero{
+
+        height:230px;
+
+    }
+
+
+    .hero-text{
+
+        left:20px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:35px;
+
     }
 
 }
@@ -212,235 +844,59 @@ iframe{
 
 @media(max-width:480px){
 
-    body{
-        font-size:14px;
+
+    .field p{
+
+        font-size:16px;
+
     }
 
 
-    .nav-menu{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        width:100%;
+    .hero{
+
+        height:200px;
+
     }
 
 
-    .nav-menu a{
-        background:rgba(255,255,255,.08);
-        padding:8px;
-        border-radius:5px;
-        text-align:center;
+    .hero h1{
+
+        font-size:28px;
+
     }
 
+}
+/* ==========================
+   HERO BUTTON
+========================== */
 
-    .portal{
-        grid-column:1/-1;
-        width:100%;
-    }
+.hero button{
+
+    background:#ffd800;
+
+    color:#003b95;
+
+    border:0;
+
+    padding:15px 40px;
+
+    font-weight:bold;
+
+    border-radius:5px;
+
+    cursor:pointer;
 
 }
 
 
 
 /* ==========================
-   VERY SMALL PHONES
+   CARDS SECTION
 ========================== */
-
-@media(max-width:360px){
-
-    .logo{
-        font-size:18px;
-    }
-
-
-    .header h1{
-        font-size:1.1rem;
-    }
-
-}
-
-.tabs{
-
-display:flex;
-gap:40px;
-margin-top:45px;
-
-}
-
-
-.tab{
-padding-bottom:15px;
-color:#ccc;
-font-weight:bold;
-
-}
-
-
-.active{
-
-color:white;
-border-bottom:3px solid #ffd800;
-
-}
-
-
-
-.trip-options{
-
-margin-top:25px;
-display:flex;
-gap:25px;
-
-}
-
-
-.trip-options b{
-
-background:#ffd800;
-color:#003b95;
-padding:4px;
-
-}
-
-
-
-.search-area{
-
-display:flex;
-margin-top:25px;
-align-items:center;
-
-}
-
-
-
-.field{
-
-background:white;
-color:#111;
-height:58px;
-flex:1;
-padding:8px 18px;
-
-}
-
-
-
-.field small{
-
-color:#777;
-
-}
-
-
-
-.field p{
-
-margin:5px 0;
-font-size:18px;
-
-}
-
-
-.gray{
-
-color:#777;
-
-}
-
-
-
-.swap{
-
-background:white;
-color:#777;
-height:55px;
-padding:18px;
-
-}
-
-
-
-.search{
-
-height:55px;
-width:280px;
-background:#ffd800;
-border:0;
-font-size:17px;
-font-weight:bold;
-
-}
-
-
-
-.filters{
-
-margin-top:15px;
-
-}
-
-
-.filters button{
-
-margin-left:15px;
-background:transparent;
-border:1px solid #aaa;
-color:white;
-padding:8px 15px;
-
-}
-
-
-
-
-
-
-.hero{
-    width:100%;
-    height:360px;
-    overflow:hidden;
-}
-
-.hero-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-
-
-.hero-text{
-
-padding-left:60px;
-color:white;
-
-}
-
-
-.hero h1{
-
-font-size:70px;
-
-}
-
-
-
-.hero button{
-
-background:#ffd800;
-border:0;
-padding:15px 40px;
-font-weight:bold;
-
-}
-
-
-
 
 .cards{
 
-padding:30px 7%;
+    padding:30px 7%;
 
 }
 
@@ -448,40 +904,77 @@ padding:30px 7%;
 
 .card-container{
 
-display:flex;
-gap:25px;
+    display:flex;
+
+    gap:25px;
+
+    width:100%;
 
 }
+
 
 
 .card{
 
-background:white;
-height:150px;
-flex:1;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:25px;
+    background:white;
+
+    min-height:150px;
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:25px;
+
+    border-radius:8px;
 
 }
 
 
+
+/* ==========================
+   FLOATING MAIL BUTTON
+========================== */
 
 .mail{
 
-position:fixed;
-right:0;
-top:55%;
+    position:fixed;
 
-background:#003b95;
-padding:20px;
-color:white;
+    right:0;
+
+    top:55%;
+
+    background:#003b95;
+
+    padding:18px;
+
+    color:white;
+
+    border-radius:8px 0 0 8px;
+
+    z-index:500;
 
 }
+
+
+
+/* ==========================
+   SEARCH AREA POPUP
+========================== */
+
 .search-area{
+
     position:relative;
+
 }
+
+
 
 .airport-popup{
 
@@ -489,7 +982,7 @@ color:white;
 
     position:absolute;
 
-    top:105px;
+    top:105%;
 
     left:0;
 
@@ -509,6 +1002,8 @@ color:white;
 
 }
 
+
+
 .popup-left{
 
     width:70%;
@@ -519,13 +1014,168 @@ color:white;
 
 }
 
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
+
+    .cards{
+
+        padding:25px 4%;
+
+    }
+
+
+    .card-container{
+
+        gap:15px;
+
+    }
+
+
+    .card{
+
+        font-size:20px;
+
+    }
+
+
+    .popup-left{
+
+        width:60%;
+
+    }
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+
+    .hero button{
+
+        padding:12px 25px;
+
+        font-size:14px;
+
+    }
+
+
+    .card-container{
+
+        flex-direction:column;
+
+    }
+
+
+    .card{
+
+        width:100%;
+
+        min-height:120px;
+
+        font-size:20px;
+
+    }
+
+
+    .mail{
+
+        top:auto;
+
+        bottom:20px;
+
+        padding:12px;
+
+    }
+
+
+    .airport-popup{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+
+    .popup-left{
+
+        width:100%;
+
+        padding:15px;
+
+    }
+
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+
+    .cards{
+
+        padding:20px 10px;
+
+    }
+
+
+    .card{
+
+        font-size:18px;
+
+        min-height:100px;
+
+    }
+
+
+    .hero button{
+
+        width:100%;
+
+    }
+
+
+    .mail{
+
+        right:10px;
+
+        border-radius:50%;
+
+    }
+
+}
+/* ==========================
+   AIRPORT POPUP RIGHT
+========================== */
+
 .popup-right{
 
     width:30%;
 
     padding:25px;
 
+    background:#fff;
+
 }
+
+
+
+/* Countries Grid */
 
 .countries{
 
@@ -539,11 +1189,18 @@ color:white;
 
 }
 
+
 .countries span{
 
     cursor:pointer;
 
+    padding:6px;
+
 }
+
+
+
+/* Active Country */
 
 .active-country{
 
@@ -559,6 +1216,10 @@ color:white;
 
 }
 
+
+
+/* Airport List */
+
 .airport{
 
     padding:10px 15px;
@@ -568,6 +1229,7 @@ color:white;
     cursor:pointer;
 
 }
+
 
 .active-airport{
 
@@ -582,91 +1244,310 @@ color:white;
 }
 
 
-/* Mail Icon */
+
+/* ==========================
+   MAIL ICON
+========================== */
+
 .mail{
+
     position:fixed;
+
     right:0;
+
     top:55%;
+
     transform:translateY(-50%);
+
     background:#003b95;
-    color:#fff;
-    padding:20px;
-    font-size:28px;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:26px;
+
     cursor:pointer;
+
     z-index:1000;
+
     border-radius:10px 0 0 10px;
+
     box-shadow:0 5px 15px rgba(0,0,0,.3);
+
 }
 
-/* Popup */
+
+
+/* ==========================
+   SUBSCRIBE POPUP
+========================== */
+
 .subscribe-popup{
+
     position:fixed;
+
     right:-380px;
+
     top:50%;
+
     transform:translateY(-50%);
+
     width:320px;
+
+    max-width:90%;
+
     background:#003b95;
-    color:#fff;
+
+    color:white;
+
     padding:20px;
+
     border-radius:10px 0 0 10px;
+
     box-shadow:0 8px 20px rgba(0,0,0,.3);
+
     transition:.4s;
+
     z-index:999;
+
 }
+
 
 .subscribe-popup.active{
+
     right:0;
+
 }
+
+
 
 .subscribe-popup h2{
+
     margin:0 0 15px;
+
     font-size:24px;
+
 }
+
 
 .subscribe-popup p{
+
     font-size:15px;
+
     line-height:1.5;
+
     margin-bottom:20px;
+
 }
+
 
 .subscribe-popup input{
+
     width:100%;
+
     padding:12px;
+
     border:none;
+
     border-radius:5px;
+
     margin-bottom:15px;
-    box-sizing:border-box;
+
 }
+
+
 
 .subscribe-btn{
+
     width:100%;
+
     padding:12px;
+
     border:none;
+
     background:#ffcc00;
+
     color:#003b95;
+
     font-size:18px;
+
     font-weight:bold;
+
     border-radius:5px;
+
     cursor:pointer;
+
 }
+
 
 .subscribe-btn:hover{
+
     background:#ffd633;
+
 }
 
+
+
 .close-btn{
+
     position:absolute;
+
     top:10px;
+
     right:10px;
+
     border:none;
+
     background:none;
-    color:#fff;
+
+    color:white;
+
     font-size:24px;
+
     cursor:pointer;
+
 }
+
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
+
+    .popup-right{
+
+        width:40%;
+
+        padding:20px;
+
+    }
+
+
+    .countries{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:12px;
+
+    }
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+
+    .popup-right{
+
+        width:100%;
+
+        padding:15px;
+
+    }
+
+
+    .countries{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:10px;
+
+    }
+
+
+    .mail{
+
+        padding:12px;
+
+        font-size:22px;
+
+        bottom:20px;
+
+        top:auto;
+
+        transform:none;
+
+    }
+
+
+    .subscribe-popup{
+
+        width:95%;
+
+        right:-100%;
+
+        top:auto;
+
+        bottom:15px;
+
+        transform:none;
+
+        border-radius:10px;
+
+    }
+
+
+    .subscribe-popup.active{
+
+        right:2.5%;
+
+    }
+
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+
+    .countries{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .subscribe-popup h2{
+
+        font-size:20px;
+
+    }
+
+
+    .subscribe-popup p{
+
+        font-size:14px;
+
+    }
+
+}
+/* ==========================
+   SEARCH AREA
+========================== */
+
 .search-area{
     position:relative;
+    width:100%;
 }
+
+
+
+/* ==========================
+   AIRPORT POPUP
+========================== */
 
 .airport-popup{
 
@@ -674,7 +1555,7 @@ color:white;
 
     position:absolute;
 
-    top:105px;
+    top:105%;
 
     left:0;
 
@@ -694,6 +1575,10 @@ color:white;
 
 }
 
+
+
+/* Left Side */
+
 .popup-left{
 
     width:70%;
@@ -704,10 +1589,98 @@ color:white;
 
 }
 
+
+
+/* Right Side */
+
 .popup-right{
 
     width:30%;
 
     padding:25px;
+
+    background:white;
+
+}
+
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
+    .airport-popup{
+
+        flex-direction:column;
+
+    }
+
+
+    .popup-left,
+    .popup-right{
+
+        width:100%;
+
+        padding:20px;
+
+    }
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .airport-popup{
+
+        position:absolute;
+
+        top:100%;
+
+        width:100%;
+
+        max-height:80vh;
+
+        overflow-y:auto;
+
+    }
+
+
+    .popup-left,
+    .popup-right{
+
+        padding:15px;
+
+    }
+
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+    .airport-popup{
+
+        border-radius:6px;
+
+    }
+
+
+    .popup-left,
+    .popup-right{
+
+        padding:12px;
+
+    }
 
 }
