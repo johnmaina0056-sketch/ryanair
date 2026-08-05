@@ -63,180 +63,48 @@ iframe{
     font-weight:700;
     line-height:1.2;
 }
+/* ==========================
+   HEADER CONTAINER
+========================== */
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    width:100%;
+    background:#073b9a;
+    color:white;
+}
+
+
+.header .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+
+.header h1{
+    margin:0;
+    font-size:1.8rem;
+}
 
 
 .header p{
     margin:5px 0 0;
-    font-size:.9rem;
-}
-
-
-/* ==========================
-   MOBILE NAVIGATION FIX
-========================== */
-
-@media(max-width:768px){
-
-    body{
-        padding:0;
-    }
-
-
-    .top{
-    width:100%;
-    background:#003b95;
-    display:flex;
-    align-items:center; /* vertical center */
-    justify-content:space-between;
-    padding:10px 4%;
-    gap:20px;
-}
-
-
-/* Logo */
-.logo{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:22px;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-
-/* Navigation */
-.nav-menu{
-    display:flex;
-    align-items:center; /* centers all links + button */
-    justify-content:center;
-    gap:15px;
-}
-
-
-.nav-menu a{
-    display:flex;
-    align-items:center;
-    color:#fff;
-    text-decoration:none;
-    font-size:14px;
-    height:100%;
-}
-
-
-.portal{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#ffd800;
-    border:0;
-    padding:8px 18px;
-    border-radius:20px;
-    color:#003b95;
-    font-weight:bold;
-}
-}
-
-
-/* Small phones */
-
-@media(max-width:480px){
-
-    .logo{
-        font-size:18px;
-    }
-
-
-    .nav-menu a{
-        font-size:13px;
-        padding:7px;
-    }
-
-
-    .portal{
-        font-size:13px;
-    }
-
-}
-/* ==========================
-   TOP NAVIGATION
-========================== */
-
-.top{
-    width:100%;
-    background:#003b95;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:10px 4%;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    color:white;
-    font-size:22px;
-    font-weight:700;
-    white-space:nowrap;
-}
-
-
-.logo span{
-    letter-spacing:.3px;
-}
-
-
-
-/* Navigation */
-
-.nav-menu{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-
-.nav-menu a,
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:500;
-    white-space:nowrap;
-    transition:.3s;
-}
-
-
-.nav-menu a:hover,
-nav a:hover{
-    color:#ffd800;
-}
-
-
-
-/* Button */
-
-.portal{
-    background:#ffd800;
-    border:0;
-    padding:8px 18px;
-    border-radius:22px;
-    color:#003b95;
-    font-weight:bold;
-    font-size:14px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-
-.portal:hover{
-    background:#ffe45c;
+    font-size:.95rem;
 }
 
 
@@ -247,33 +115,16 @@ nav a:hover{
 
 @media(max-width:992px){
 
-    .header{
-        padding:12px 3%;
+    .container{
+        padding:0 15px;
     }
 
+    .header .container{
+        gap:15px;
+    }
 
     .header h1{
-        font-size:1.4rem;
-    }
-
-
-    .top{
-        padding:10px 3%;
-    }
-
-
-    .logo{
-        font-size:20px;
-    }
-
-
-    .nav-menu{
-        gap:8px;
-    }
-
-
-    .nav-menu a{
-        font-size:13px;
+        font-size:1.5rem;
     }
 
 }
@@ -286,22 +137,21 @@ nav a:hover{
 
 @media(max-width:768px){
 
-    .header,
-    .top{
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
+    .container{
+        padding:0 12px;
     }
 
 
-    .header{
-        padding:12px;
+    .header .container{
+        flex-direction:column;
+        text-align:center;
+        justify-content:center;
+        gap:10px;
     }
 
 
     .header h1{
-        font-size:1.25rem;
+        font-size:1.3rem;
     }
 
 
@@ -309,6 +159,31 @@ nav a:hover{
         font-size:.85rem;
     }
 
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+    .container{
+        padding:0 10px;
+    }
+
+
+    .header h1{
+        font-size:1.15rem;
+    }
+
+
+    .header p{
+        font-size:.8rem;
+    }
+
+}
 
     .logo{
         font-size:20px;
