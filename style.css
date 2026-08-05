@@ -1,0 +1,752 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    padding:2px;
+    min-height:100vh;
+    background:#f4f4f4;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
+    line-height:1.5;
+}
+
+
+/* ==========================
+   GLOBAL MEDIA
+========================== */
+
+img,
+video,
+iframe{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    width:100%;
+    background:#073b9a;
+    color:#fff;
+    padding:12px 4%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+
+.header h1{
+    margin:0;
+    font-size:1.6rem;
+    font-weight:700;
+    line-height:1.2;
+}
+
+
+.header p{
+    margin:5px 0 0;
+    font-size:.9rem;
+}
+
+
+
+/* ==========================
+   TOP NAVIGATION
+========================== */
+
+.top{
+    width:100%;
+    background:#003b95;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 4%;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:white;
+    font-size:22px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+
+.logo span{
+    letter-spacing:.3px;
+}
+
+
+
+/* Navigation */
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+
+.nav-menu a,
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    white-space:nowrap;
+    transition:.3s;
+}
+
+
+.nav-menu a:hover,
+nav a:hover{
+    color:#ffd800;
+}
+
+
+
+/* Button */
+
+.portal{
+    background:#ffd800;
+    border:0;
+    padding:8px 18px;
+    border-radius:22px;
+    color:#003b95;
+    font-weight:bold;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.portal:hover{
+    background:#ffe45c;
+}
+
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
+    .header{
+        padding:12px 3%;
+    }
+
+
+    .header h1{
+        font-size:1.4rem;
+    }
+
+
+    .top{
+        padding:10px 3%;
+    }
+
+
+    .logo{
+        font-size:20px;
+    }
+
+
+    .nav-menu{
+        gap:8px;
+    }
+
+
+    .nav-menu a{
+        font-size:13px;
+    }
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .header,
+    .top{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    }
+
+
+    .header{
+        padding:12px;
+    }
+
+
+    .header h1{
+        font-size:1.25rem;
+    }
+
+
+    .header p{
+        font-size:.85rem;
+    }
+
+
+    .logo{
+        font-size:20px;
+    }
+
+
+    .nav-menu{
+        width:100%;
+        justify-content:center;
+        gap:6px;
+    }
+
+
+    .portal{
+        width:auto;
+        margin-top:5px;
+    }
+
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+    body{
+        font-size:14px;
+    }
+
+
+    .nav-menu{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        width:100%;
+    }
+
+
+    .nav-menu a{
+        background:rgba(255,255,255,.08);
+        padding:8px;
+        border-radius:5px;
+        text-align:center;
+    }
+
+
+    .portal{
+        grid-column:1/-1;
+        width:100%;
+    }
+
+}
+
+
+
+/* ==========================
+   VERY SMALL PHONES
+========================== */
+
+@media(max-width:360px){
+
+    .logo{
+        font-size:18px;
+    }
+
+
+    .header h1{
+        font-size:1.1rem;
+    }
+
+}
+
+.tabs{
+
+display:flex;
+gap:40px;
+margin-top:45px;
+
+}
+
+
+.tab{
+padding-bottom:15px;
+color:#ccc;
+font-weight:bold;
+
+}
+
+
+.active{
+
+color:white;
+border-bottom:3px solid #ffd800;
+
+}
+
+
+
+.trip-options{
+
+margin-top:25px;
+display:flex;
+gap:25px;
+
+}
+
+
+.trip-options b{
+
+background:#ffd800;
+color:#003b95;
+padding:4px;
+
+}
+
+
+
+.search-area{
+
+display:flex;
+margin-top:25px;
+align-items:center;
+
+}
+
+
+
+.field{
+
+background:white;
+color:#111;
+height:58px;
+flex:1;
+padding:8px 18px;
+
+}
+
+
+
+.field small{
+
+color:#777;
+
+}
+
+
+
+.field p{
+
+margin:5px 0;
+font-size:18px;
+
+}
+
+
+.gray{
+
+color:#777;
+
+}
+
+
+
+.swap{
+
+background:white;
+color:#777;
+height:55px;
+padding:18px;
+
+}
+
+
+
+.search{
+
+height:55px;
+width:280px;
+background:#ffd800;
+border:0;
+font-size:17px;
+font-weight:bold;
+
+}
+
+
+
+.filters{
+
+margin-top:15px;
+
+}
+
+
+.filters button{
+
+margin-left:15px;
+background:transparent;
+border:1px solid #aaa;
+color:white;
+padding:8px 15px;
+
+}
+
+
+
+
+
+
+.hero{
+    width:100%;
+    height:360px;
+    overflow:hidden;
+}
+
+.hero-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+
+
+.hero-text{
+
+padding-left:60px;
+color:white;
+
+}
+
+
+.hero h1{
+
+font-size:70px;
+
+}
+
+
+
+.hero button{
+
+background:#ffd800;
+border:0;
+padding:15px 40px;
+font-weight:bold;
+
+}
+
+
+
+
+.cards{
+
+padding:30px 7%;
+
+}
+
+
+
+.card-container{
+
+display:flex;
+gap:25px;
+
+}
+
+
+.card{
+
+background:white;
+height:150px;
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+
+}
+
+
+
+.mail{
+
+position:fixed;
+right:0;
+top:55%;
+
+background:#003b95;
+padding:20px;
+color:white;
+
+}
+.search-area{
+    position:relative;
+}
+
+.airport-popup{
+
+    display:none;
+
+    position:absolute;
+
+    top:105px;
+
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    display:flex;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+.popup-left{
+
+    width:70%;
+
+    padding:25px;
+
+    background:#eef6ff;
+
+}
+
+.popup-right{
+
+    width:30%;
+
+    padding:25px;
+
+}
+
+.countries{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+
+}
+
+.countries span{
+
+    cursor:pointer;
+
+}
+
+.active-country{
+
+    background:#0057c2;
+
+    color:white;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    width:fit-content;
+
+}
+
+.airport{
+
+    padding:10px 15px;
+
+    margin-top:10px;
+
+    cursor:pointer;
+
+}
+
+.active-airport{
+
+    background:#0057c2;
+
+    color:white;
+
+    border-radius:20px;
+
+    width:fit-content;
+
+}
+
+
+/* Mail Icon */
+.mail{
+    position:fixed;
+    right:0;
+    top:55%;
+    transform:translateY(-50%);
+    background:#003b95;
+    color:#fff;
+    padding:20px;
+    font-size:28px;
+    cursor:pointer;
+    z-index:1000;
+    border-radius:10px 0 0 10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+/* Popup */
+.subscribe-popup{
+    position:fixed;
+    right:-380px;
+    top:50%;
+    transform:translateY(-50%);
+    width:320px;
+    background:#003b95;
+    color:#fff;
+    padding:20px;
+    border-radius:10px 0 0 10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+    transition:.4s;
+    z-index:999;
+}
+
+.subscribe-popup.active{
+    right:0;
+}
+
+.subscribe-popup h2{
+    margin:0 0 15px;
+    font-size:24px;
+}
+
+.subscribe-popup p{
+    font-size:15px;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.subscribe-popup input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+    margin-bottom:15px;
+    box-sizing:border-box;
+}
+
+.subscribe-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#ffcc00;
+    color:#003b95;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.subscribe-btn:hover{
+    background:#ffd633;
+}
+
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    border:none;
+    background:none;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+}
+.search-area{
+    position:relative;
+}
+
+.airport-popup{
+
+    display:none;
+
+    position:absolute;
+
+    top:105px;
+
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    display:flex;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+.popup-left{
+
+    width:70%;
+
+    padding:25px;
+
+    background:#eef6ff;
+
+}
+
+.popup-right{
+
+    width:30%;
+
+    padding:25px;
+
+}

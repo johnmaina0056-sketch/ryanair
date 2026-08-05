@@ -1,0 +1,2963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flight Booking</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+   <!-- ==========================
+     TOP NAVIGATION
+========================== -->
+
+<header class="top">
+
+    <!-- Logo -->
+    <div class="logo">
+        ✈ <span>RYANAIR</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-menu">
+
+        <a href="#">Plan</a>
+
+        <a href="#">FAQs</a>
+
+        <a href="#" aria-label="Accessibility">♿</a>
+
+        <a href="#">My Bookings</a>
+
+        <a href="#" aria-label="Language">
+            🇬🇧
+        </a>
+
+        <a href="#">Log in</a>
+
+        <button class="portal">
+            My Portal
+        </button>
+
+    </nav>
+<div>
+    <div class="tabs">
+
+        <div class="tab active">
+            ✈ FLIGHTS
+        </div>
+
+        <div class="tab">
+            🚗 CAR HIRE
+        </div>
+<!-- 
+        <div class="tab">
+            🏨 HOTELS
+        </div>
+
+        <div class="tab">
+            🎁 GIFT CARDS
+        </div> -->
+
+    </div>
+
+</div>
+
+    <div style="color: #eee;" class="trip-options">
+
+        <span>● Return trip</span>
+        <span>○ One way</span>
+        <span>○ Multicity <b>NEW</b></span>
+        <span>☆ Apply promo code</span>
+
+    </div>
+
+
+<div class="search-area">
+
+    <!-- FROM -->
+    <div class="field dropdown" id="fromDropdown">
+
+        <small>From</small>
+       <p id="fromValue">Amsterdam</p>
+
+     <div class="popup from-popup">
+
+    <div class="popup-header">
+        <h3>Origin country</h3>
+    </div>
+<div class="country-grid">
+    <span class="from-country" data-country="Albania">Albania</span>
+    <span class="from-country" data-country="Austria">Austria</span>
+    <span class="from-country" data-country="Belgium">Belgium</span>
+    <span class="from-country" data-country="Bosnia & Herzegovina">Bosnia & Herzegovina</span>
+    <span class="from-country" data-country="Bulgaria">Bulgaria</span>
+    <span class="from-country" data-country="Croatia">Croatia</span>
+    <span class="from-country" data-country="Cyprus">Cyprus</span>
+    <span class="from-country" data-country="Czech Republic">Czech Republic</span>
+    <span class="from-country" data-country="Denmark">Denmark</span>
+    <span class="from-country" data-country="Estonia">Estonia</span>
+    <span class="from-country" data-country="Finland">Finland</span>
+    <span class="from-country" data-country="France">France</span>
+    <span class="from-country" data-country="Germany">Germany</span>
+    <span class="from-country" data-country="Greece">Greece</span>
+    <span class="from-country" data-country="Hungary">Hungary</span>
+    <span class="from-country" data-country="Ireland">Ireland</span>
+    <span class="from-country" data-country="Italy">Italy</span>
+    <span class="from-country" data-country="Jordan">Jordan</span>
+    <span class="from-country" data-country="Latvia">Latvia</span>
+    <span class="from-country" data-country="Lithuania">Lithuania</span>
+    <span class="from-country" data-country="Luxembourg">Luxembourg</span>
+    <span class="from-country" data-country="Malta">Malta</span>
+    <span class="from-country" data-country="Montenegro">Montenegro</span>
+    <span class="from-country" data-country="Morocco">Morocco</span>
+    <span class="from-country" data-country="Netherlands">Netherlands</span>
+    <span class="from-country" data-country="Norway">Norway</span>
+    <span class="from-country" data-country="Poland">Poland</span>
+    <span class="from-country" data-country="Portugal">Portugal</span>
+    <span class="from-country" data-country="Romania">Romania</span>
+    <span class="from-country" data-country="Serbia">Serbia</span>
+    <span class="from-country" data-country="Slovakia">Slovakia</span>
+    <span class="from-country" data-country="Spain">Spain</span>
+    <span class="from-country" data-country="Sweden">Sweden</span>
+    <span class="from-country" data-country="Switzerland">Switzerland</span>
+    <span class="from-country" data-country="Turkey">Turkey</span>
+    <span class="from-country" data-country="United Kingdom">United Kingdom</span>
+</div>
+
+</div>
+<style>
+    .from-popup{
+    position:absolute;
+    top:calc(100% + 12px);
+    left:0;
+    width:700px;
+    background:#fff;
+    border-radius:4px;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+    display:none;
+    z-index:999;
+}
+
+.dropdown.active .from-popup{
+    display:block;
+}
+
+.popup-header{
+    padding:20px 25px 10px;
+    border-bottom:1px solid #eee;
+}
+
+.popup-header h3{
+    color:#003b95;
+    font-size:30px;
+    margin:0;
+}
+
+.country-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px 35px;
+    padding:25px;
+}
+
+.country-grid span{
+    color:#555;
+    cursor:pointer;
+    transition:.2s;
+    font-size:16px;
+}
+
+.country-grid span:hover{
+    color:#003b95;
+    font-weight:600;
+}
+</style>
+
+    </div>
+
+    <div class="swap">⇄</div>
+
+    <!-- TO -->
+  <!-- TO -->
+<!-- TO DROPDOWN -->
+<div class="field dropdown" id="toDropdown">
+    <small>To</small>
+    <p id="toValue" class="gray">Destination</p>
+
+    <div class="popup destination-popup">
+
+        <!-- COUNTRY PANEL -->
+        <div class="destination-panel" id="countryPanel">
+
+            <div class="popup-header">
+                <h3>Pick a destination country</h3>
+            </div>
+
+            <div class="country-grid">
+      <div class="country-grid">
+
+    <div class="country-column">
+        <span class="to-country" data-country="Albania">Albania</span>
+        <span class="to-country" data-country="Austria">Austria</span>
+        <span class="to-country" data-country="Belgium">Belgium</span>
+        <span class="to-country" data-country="Bosnia & Herzegovina">Bosnia & Herzegovina</span>
+        <span class="to-country" data-country="Bulgaria">Bulgaria</span>
+        <span class="to-country" data-country="Croatia">Croatia</span>
+        <span class="to-country" data-country="Cyprus">Cyprus</span>
+        <span class="to-country" data-country="Czech Republic">Czech Republic</span>
+        <span class="to-country" data-country="Denmark">Denmark</span>
+    </div>
+
+    <div class="country-column">
+        <span class="to-country" data-country="Estonia">Estonia</span>
+        <span class="to-country" data-country="Finland">Finland</span>
+        <span class="to-country" data-country="France">France</span>
+        <span class="to-country" data-country="Germany">Germany</span>
+        <span class="to-country" data-country="Greece">Greece</span>
+        <span class="to-country" data-country="Hungary">Hungary</span>
+        <span class="to-country" data-country="Ireland">Ireland</span>
+        <span class="to-country" data-country="Italy">Italy</span>
+        <span class="to-country" data-country="Jordan">Jordan</span>
+    </div>
+<style>
+    .country-column{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.to-country{
+    display:block;
+    color:#555;
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.to-country:hover{
+    color:#003b95;
+    font-weight:600;
+}
+</style>
+    <div class="country-column">
+        <span class="to-country" data-country="Latvia">Latvia</span>
+        <span class="to-country" data-country="Lithuania">Lithuania</span>
+        <span class="to-country" data-country="Luxembourg">Luxembourg</span>
+        <span class="to-country" data-country="Malta">Malta</span>
+        <span class="to-country" data-country="Montenegro">Montenegro</span>
+        <span class="to-country" data-country="Morocco">Morocco</span>
+        <span class="to-country" data-country="Netherlands">Netherlands</span>
+        <span class="to-country" data-country="Norway">Norway</span>
+        <span class="to-country" data-country="Poland">Poland</span>
+    </div>
+
+    <div class="country-column">
+        <span class="to-country" data-country="Portugal">Portugal</span>
+        <span class="to-country" data-country="Romania">Romania</span>
+        <span class="to-country" data-country="Serbia">Serbia</span>
+        <span class="to-country" data-country="Slovakia">Slovakia</span>
+        <span class="to-country" data-country="Spain">Spain</span>
+        <span class="to-country" data-country="Sweden">Sweden</span>
+        <span class="to-country" data-country="Switzerland">Switzerland</span>
+        <span class="to-country" data-country="Turkey">Turkey</span>
+        <span class="to-country" data-country="United Kingdom">United Kingdom</span>
+    </div>
+
+</div>
+            </div>
+
+        </div>
+
+    <!-- AIRPORT PANEL -->
+<div class="airport-panel" id="airportPanel">
+
+    <div class="popup-header airport-header">
+        <button type="button" class="back-btn" id="backToCountries" aria-label="Back to countries">
+            &larr;
+        </button>
+
+        <div class="airport-title">
+            <h3 id="airportCountry">Croatia</h3>
+            <p>Pick an airport</p>
+        </div>
+    </div>
+
+    <div class="airport-list" id="airportList">
+        <!-- Airports will be inserted here automatically -->
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<style>
+.destination-popup{
+    position:absolute;
+    top:calc(100% + 12px);
+    left:0;
+    width:760px;
+    background:#fff;
+    border-radius:6px;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+    display:none;
+    z-index:999;
+    overflow:hidden;
+}
+
+.dropdown.active .destination-popup{
+    display:block;
+}
+
+.destination-panel,
+.airport-panel{
+    padding:0;
+}
+
+.airport-panel{
+    display:none;
+}
+
+.popup-header{
+    padding:20px 25px;
+    border-bottom:1px solid #eee;
+}
+
+.popup-header h3{
+    color:#003b95;
+    font-size:28px;
+    margin:0;
+}
+
+.country-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px 30px;
+    padding:25px;
+}
+
+.country-grid span{
+    color:#555;
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.country-grid span:hover{
+    color:#003b95;
+    font-weight:600;
+}
+
+.airport-header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.back-btn{
+    font-size:28px;
+    color:#003b95;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.airport-header p{
+    margin:5px 0 0;
+    color:#777;
+    font-size:15px;
+}
+
+.airport-list{
+    padding:10px 0;
+}
+
+.airport-item{
+    padding:16px 25px;
+    border-bottom:1px solid #f0f0f0;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.airport-item:hover{
+    background:#f8f9fb;
+}
+
+.airport-item strong{
+    display:block;
+    color:#111;
+    font-size:16px;
+}
+
+.airport-item span{
+    color:#666;
+    font-size:14px;
+}
+</style>
+
+<script>const airportData = {
+    Croatia: [
+        {city:"Zagreb", code:"ZAG"},
+        {city:"Split", code:"SPU"},
+        {city:"Dubrovnik", code:"DBV"},
+        {city:"Zadar", code:"ZAD"}
+    ],
+    Switzerland: [
+        {city:"Basel", code:"BSL"},
+        {city:"Zurich", code:"ZRH"},
+        {city:"Geneva", code:"GVA"}
+    ],
+    Germany: [
+        {city:"Berlin", code:"BER"},
+        {city:"Munich", code:"MUC"},
+        {city:"Frankfurt", code:"FRA"}
+    ],
+    Italy: [
+        {city:"Rome", code:"FCO"},
+        {city:"Milan", code:"MXP"},
+        {city:"Venice", code:"VCE"}
+    ],
+    Spain: [
+        {city:"Madrid", code:"MAD"},
+        {city:"Barcelona", code:"BCN"},
+        {city:"Valencia", code:"VLC"}
+    ],
+    France: [
+        {city:"Paris", code:"CDG"},
+        {city:"Nice", code:"NCE"},
+        {city:"Lyon", code:"LYS"}
+    ],
+    Austria: [
+        {city:"Vienna", code:"VIE"},
+        {city:"Salzburg", code:"SZG"}
+    ],
+    Belgium: [
+        {city:"Brussels", code:"BRU"}
+    ],
+    Netherlands: [
+        {city:"Amsterdam", code:"AMS"}
+    ]
+};
+const toDropdown = document.getElementById("toDropdown");
+const countryPanel = document.getElementById("countryPanel");
+const airportPanel = document.getElementById("airportPanel");
+const airportCountry = document.getElementById("airportCountry");
+const airportList = document.getElementById("airportList");
+const toValue = document.getElementById("toValue");
+
+if(!toDropdown || !countryPanel || !airportPanel || !airportCountry || !airportList || !toValue){
+    console.log("Destination dropdown elements missing");
+    return;
+}
+// Select country
+document.querySelectorAll(".to-country").forEach(item => {
+    item.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        const country = this.dataset.country;
+        airportCountry.textContent = country;
+        airportList.innerHTML = "";
+
+        (airportData[country] || []).forEach(airport => {
+            const row = document.createElement("div");
+            row.className = "airport-item";
+            row.innerHTML = `
+                <strong>${airport.city}</strong>
+                <span>${airport.code} Airport</span>
+            `;
+
+            row.addEventListener("click", function (e) {
+                e.stopPropagation();
+
+                toValue.textContent = airport.city;
+                toValue.classList.remove("gray");
+
+                // Reset to country view for next time
+                airportPanel.style.display = "none";
+                countryPanel.style.display = "block";
+
+                // Close popup only if your existing dropdown uses .active
+                toDropdown.classList.remove("active");
+            });
+
+            airportList.appendChild(row);
+        });
+
+        countryPanel.style.display = "none";
+        airportPanel.style.display = "block";
+    });
+});
+
+// Back button
+document.getElementById("backToCountries").addEventListener("click", function (e) {
+    e.stopPropagation();
+    airportPanel.style.display = "none";
+    countryPanel.style.display = "block";
+});
+</script>
+
+<button class="search" id="searchBtn">Search</button>
+
+<script>
+document.getElementById("searchBtn").addEventListener("click", function () {
+
+    const from = document.getElementById("fromValue").textContent.trim();
+    const to = document.getElementById("toValue").textContent.trim();
+
+    const depart = document.getElementById("departDate")
+        ? document.getElementById("departDate").value
+        : "";
+
+    const returnDate = document.getElementById("returnDate")
+        ? document.getElementById("returnDate").value
+        : "";
+
+    const passengers = document.getElementById("passengerValue")
+        ? document.getElementById("passengerValue").textContent.trim()
+        : "";
+
+    // Validation
+    if (!depart) {
+        alert("Please select a departure date.");
+        return;
+    }
+
+    if (!returnDate) {
+        alert("Please select a return date.");
+        return;
+    }
+
+    if (
+        !passengers ||
+        passengers === "Passengers" ||
+        passengers === "Select Passengers" ||
+        passengers === "0 Adults"
+    ) {
+        alert("Please select the number of adults.");
+        return;
+    }
+
+    const message = encodeURIComponent(
+        `Flight Booking Request\n\n` +
+        `From Airport: ${from}\n` +
+        `To Airport: ${to}\n` +
+        `Departure Date: ${depart}\n` +
+        `Return Date: ${returnDate}\n` +
+        `Passengers: ${passengers}`
+    );
+
+    window.open(`https://wa.me/254797539153?text=${message}`, "_blank");
+});
+</script>
+</div>
+ <div id="bookingSearch" class="search-area" style="display:none;">
+
+    <div class="booking-box">
+        <label>Depart</label>
+        <input type="date" id="departDate">
+    </div>
+
+    <div class="booking-box">
+        <label>Return</label>
+        <input type="date" id="returnDate">
+    </div>
+
+    <div class="booking-box">
+        <label>Passengers</label>
+        <select id="adultCount">
+            <option>1 Adult</option>
+            <option>2 Adults</option>
+            <option>3 Adults</option>
+            <option>4 Adults</option>
+            <option>5 Adults</option>
+            <option>6 Adults</option>
+        </select>
+    </div>
+
+ 
+</div>
+<style>
+    .booking-search{
+    margin-top:20px;
+    display:flex;
+    background:#003b95;
+    border:4px solid #febb02;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.booking-box{
+    flex:1;
+    background:#fff;
+    padding:8px 15px;
+    border-right:1px solid #ddd;
+}
+
+.booking-box:last-child{
+    border-right:none;
+}
+
+.booking-box label{
+    display:block;
+    font-size:12px;
+    color:#666;
+    margin-bottom:4px;
+}
+
+.booking-box input,
+.booking-box select{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background:transparent;
+}
+
+.search-btn{
+    background:#febb02;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.search-btn button{
+    background:none;
+    border:none;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+</header>
+
+
+    
+
+
+
+
+<style>
+  /* ==========================
+   DESTINATION PANEL
+========================== */
+
+.destination-panel{
+
+    width:900px;
+    max-width:90vw;
+
+    background:#fff;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+    z-index:999;
+
+    padding:15px;
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================
+   DESTINATION CONTENT
+========================== */
+
+.destination-countries{
+
+    padding:0;
+
+}
+
+
+.destination-countries h3{
+
+    margin:5px 0 12px;
+
+    color:#003b95;
+
+    font-size:24px;
+
+}
+
+
+
+/* ==========================
+   DISCOVER BOX
+========================== */
+
+.discover-box{
+
+    background:#f4f8ff;
+
+    border:1px solid #d8e7ff;
+
+    border-radius:8px;
+
+    padding:10px;
+
+    margin-bottom:12px;
+
+}
+
+
+.new-badge{
+
+    display:inline-block;
+
+    background:#ffd400;
+
+    color:#000;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    padding:2px 6px;
+
+    border-radius:4px;
+
+}
+
+
+.discover-box h4{
+
+    margin:5px 0;
+
+    color:#003b95;
+
+    font-size:16px;
+
+}
+
+
+.discover-box a{
+
+    color:#0066ff;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+}
+
+
+
+/* ==========================
+   COUNTRY GRID
+========================== */
+
+.country-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:8px 12px;
+
+}
+
+
+.country-grid p{
+
+    margin:3px 0;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+}
+
+
+.country-grid p:hover{
+
+    color:#0066ff;
+
+}
+
+
+
+/* ==========================
+   DROPDOWN
+========================== */
+
+.dropdown{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+
+.popup{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    margin-top:8px;
+
+    background:#fff;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    display:none;
+
+    z-index:9999;
+
+}
+
+
+.dropdown.active .popup{
+
+    display:block;
+
+}
+
+
+
+/* ==========================
+   FROM POPUP
+========================== */
+
+
+.from-popup{
+
+    width:520px;
+
+    max-width:90vw;
+
+    height:380px;
+
+    overflow-y:auto;
+
+}
+
+
+
+/* ==========================
+   DESTINATION POPUP
+========================== */
+
+
+.destination-popup{
+    position:absolute;
+    top:calc(100% + 12px);
+    left:0;
+    width:720px;
+    background:#fff;
+    border-radius:6px;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+    display:none;
+    z-index:999;
+    overflow:hidden;
+}
+
+.dropdown.active .destination-popup{
+    display:block;
+}
+
+.destination-panel,
+.airport-panel{
+    padding:0;
+}
+
+.airport-panel{
+    display:none;
+}
+
+.popup-header{
+    padding:20px 25px;
+    border-bottom:1px solid #eee;
+}
+
+.popup-header h3{
+    color:#003b95;
+    font-size:28px;
+    margin:0;
+}
+
+.country-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px 30px;
+    padding:25px;
+}
+
+.country-grid span{
+    color:#555;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.country-grid span:hover{
+    color:#003b95;
+    font-weight:600;
+}
+
+.airport-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.back-btn{
+    font-size:26px;
+    cursor:pointer;
+    color:#003b95;
+    font-weight:bold;
+}
+
+.airport-header p{
+    margin:4px 0 0;
+    color:#777;
+}
+
+.airport-list{
+    padding:10px 0;
+}
+
+.airport-item{
+    padding:16px 25px;
+    border-bottom:1px solid #f0f0f0;
+    cursor:pointer;
+}
+
+.airport-item:hover{
+    background:#f8f9fb;
+}
+
+.airport-item strong{
+    display:block;
+    color:#111;
+}
+
+.airport-item span{
+    color:#666;
+    font-size:14px;
+}
+
+
+/* move popup slightly left */
+
+#toDropdown .destination-popup{
+
+    left:-120px;
+
+}
+
+
+
+/* ==========================
+   TABLET
+========================== */
+
+
+@media(max-width:900px){
+
+
+    .destination-popup,
+    .destination-panel{
+
+        width:90vw;
+
+    }
+
+
+    #toDropdown .destination-popup{
+
+        left:-80px;
+
+    }
+
+
+    .country-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:6px;
+
+    }
+
+
+    .country-grid p{
+
+        font-size:12px;
+
+    }
+
+}
+
+
+
+/* ==========================
+   MOBILE PHONES
+========================== */
+
+
+@media(max-width:600px){
+
+
+    .popup{
+
+        position:fixed;
+
+        top:75px;
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        width:calc(100vw - 20px);
+
+        max-height:65vh;
+
+        overflow-y:auto;
+
+        border-radius:8px;
+
+    }
+
+
+
+    .destination-popup,
+    .from-popup{
+
+        width:calc(100vw - 20px);
+
+        height:auto;
+
+    }
+
+
+
+    #toDropdown .destination-popup{
+
+        left:50%;
+
+    }
+
+
+
+    .destination-panel{
+
+        width:100%;
+
+        padding:8px;
+
+    }
+
+
+
+    .destination-countries h3{
+
+        font-size:17px;
+
+        margin:2px 0 8px;
+
+    }
+
+
+
+    .discover-box{
+
+        padding:7px;
+
+        margin-bottom:8px;
+
+    }
+
+
+
+    .discover-box h4{
+
+        font-size:13px;
+
+    }
+
+
+
+    .new-badge{
+
+        font-size:9px;
+
+        padding:2px 5px;
+
+    }
+
+
+
+    .country-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:3px 8px;
+
+    }
+
+
+
+    .country-grid p{
+
+        font-size:11px;
+
+        margin:2px 0;
+
+    }
+
+}
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+
+@media(max-width:380px){
+
+
+    .popup{
+
+        width:calc(100vw - 12px);
+
+    }
+
+
+    .destination-panel{
+
+        padding:5px;
+
+    }
+
+
+    .country-grid p{
+
+        font-size:10px;
+
+    }
+
+}
+</style>
+
+<script>
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(drop => {
+
+    drop.addEventListener("click",function(e){
+
+        e.stopPropagation();
+
+        dropdowns.forEach(d=>{
+            if(d!==drop)
+                d.classList.remove("active");
+        });
+
+        drop.classList.toggle("active");
+
+    });
+
+});
+
+document.addEventListener("click",()=>{
+
+    dropdowns.forEach(d=>d.classList.remove("active"));
+
+});
+</script>
+
+    <!-- <div class="filters">
+
+        ⚙ Filters
+
+        <button>
+            Price range ▼
+        </button>
+
+        <button>
+            Times ▼
+        </button>
+
+    </div> -->
+
+
+</header>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Airport database
+    const airportData = {
+        "Albania": [
+            { city: "Tirana", code: "TIA" }
+        ],
+        "Austria": [
+            { city: "Vienna", code: "VIE" },
+            { city: "Salzburg", code: "SZG" },
+            { city: "Innsbruck", code: "INN" },
+            { city: "Graz", code: "GRZ" }
+        ],
+        "Belgium": [
+            { city: "Brussels", code: "BRU" },
+            { city: "Charleroi", code: "CRL" },
+            { city: "Antwerp", code: "ANR" }
+        ],
+        "Bosnia & Herzegovina": [
+            { city: "Sarajevo", code: "SJJ" },
+            { city: "Banja Luka", code: "BNX" },
+            { city: "Mostar", code: "OMO" }
+        ],
+        "Bulgaria": [
+            { city: "Sofia", code: "SOF" },
+            { city: "Varna", code: "VAR" },
+            { city: "Burgas", code: "BOJ" }
+        ],
+        "Croatia": [
+            { city: "Zagreb", code: "ZAG" },
+            { city: "Split", code: "SPU" },
+            { city: "Dubrovnik", code: "DBV" },
+            { city: "Zadar", code: "ZAD" }
+        ],
+        "Cyprus": [
+            { city: "Larnaca", code: "LCA" },
+            { city: "Paphos", code: "PFO" }
+        ],
+        "Czech Republic": [
+            { city: "Prague", code: "PRG" },
+            { city: "Brno", code: "BRQ" }
+        ],
+        "Denmark": [
+            { city: "Copenhagen", code: "CPH" },
+            { city: "Billund", code: "BLL" },
+            { city: "Aalborg", code: "AAL" }
+        ],
+        "Estonia": [
+            { city: "Tallinn", code: "TLL" }
+        ],
+        "Finland": [
+            { city: "Helsinki", code: "HEL" },
+            { city: "Rovaniemi", code: "RVN" }
+        ],
+        "France": [
+            { city: "Paris Charles de Gaulle", code: "CDG" },
+            { city: "Paris Orly", code: "ORY" },
+            { city: "Nice", code: "NCE" },
+            { city: "Lyon", code: "LYS" }
+        ],
+        "Germany": [
+            { city: "Berlin", code: "BER" },
+            { city: "Munich", code: "MUC" },
+            { city: "Frankfurt", code: "FRA" },
+            { city: "Hamburg", code: "HAM" }
+        ],
+        "Greece": [
+            { city: "Athens", code: "ATH" },
+            { city: "Thessaloniki", code: "SKG" },
+            { city: "Santorini", code: "JTR" }
+        ],
+        "Hungary": [
+            { city: "Budapest", code: "BUD" }
+        ],
+        "Ireland": [
+            { city: "Dublin", code: "DUB" },
+            { city: "Cork", code: "ORK" }
+        ],
+        "Italy": [
+            { city: "Rome Fiumicino", code: "FCO" },
+            { city: "Milan Malpensa", code: "MXP" },
+            { city: "Venice", code: "VCE" }
+        ],
+        "Jordan": [
+            { city: "Amman Queen Alia", code: "AMM" },
+            { city: "Aqaba", code: "AQJ" }
+        ],
+        "Latvia": [
+            { city: "Riga", code: "RIX" }
+        ],
+        "Lithuania": [
+            { city: "Vilnius", code: "VNO" },
+            { city: "Kaunas", code: "KUN" }
+        ],
+        "Luxembourg": [
+            { city: "Luxembourg", code: "LUX" }
+        ],
+        "Malta": [
+            { city: "Malta", code: "MLA" }
+        ],
+        "Montenegro": [
+            { city: "Podgorica", code: "TGD" },
+            { city: "Tivat", code: "TIV" }
+        ],
+        "Morocco": [
+            { city: "Casablanca", code: "CMN" },
+            { city: "Marrakech", code: "RAK" }
+        ],
+        "Netherlands": [
+            { city: "Amsterdam Schiphol", code: "AMS" },
+            { city: "Rotterdam", code: "RTM" }
+        ],
+        "Norway": [
+            { city: "Oslo", code: "OSL" },
+            { city: "Bergen", code: "BGO" }
+        ],
+        "Poland": [
+            { city: "Warsaw Chopin", code: "WAW" },
+            { city: "Krakow", code: "KRK" }
+        ],
+        "Portugal": [
+            { city: "Lisbon", code: "LIS" },
+            { city: "Porto", code: "OPO" }
+        ],
+        "Romania": [
+            { city: "Bucharest", code: "OTP" },
+            { city: "Cluj-Napoca", code: "CLJ" }
+        ],
+        "Serbia": [
+            { city: "Belgrade", code: "BEG" }
+        ],
+        "Slovakia": [
+            { city: "Bratislava", code: "BTS" },
+            { city: "Kosice", code: "KSC" }
+        ],
+        "Spain": [
+            { city: "Madrid", code: "MAD" },
+            { city: "Barcelona", code: "BCN" },
+            { city: "Valencia", code: "VLC" }
+        ],
+        "Sweden": [
+            { city: "Stockholm Arlanda", code: "ARN" },
+            { city: "Gothenburg", code: "GOT" }
+        ],
+        "Switzerland": [
+            { city: "Zurich", code: "ZRH" },
+            { city: "Geneva", code: "GVA" },
+            { city: "Basel", code: "BSL" }
+        ],
+        "Turkey": [
+            { city: "Istanbul Airport", code: "IST" },
+            { city: "Ankara", code: "ESB" },
+            { city: "Antalya", code: "AYT" }
+        ],
+        "United Kingdom": [
+            { city: "London Heathrow", code: "LHR" },
+            { city: "London Gatwick", code: "LGW" },
+            { city: "Manchester", code: "MAN" },
+            { city: "Edinburgh", code: "EDI" }
+        ]
+    };
+
+    const toDropdown = document.getElementById("toDropdown");
+    const countryPanel = document.getElementById("countryPanel");
+    const airportPanel = document.getElementById("airportPanel");
+    const airportCountry = document.getElementById("airportCountry");
+    const airportList = document.getElementById("airportList");
+    const toValue = document.getElementById("toValue");
+
+    document.querySelectorAll(".to-country").forEach(country => {
+        country.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            const selectedCountry = this.dataset.country;
+            airportCountry.textContent = selectedCountry;
+            airportList.innerHTML = "";
+
+            const airports = airportData[selectedCountry] || [];
+
+            airports.forEach(airport => {
+                const item = document.createElement("div");
+                item.className = "airport-item";
+                item.innerHTML = `
+                    <strong>${airport.city}</strong>
+                    <span>${airport.code} Airport</span>
+                `;
+item.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    // Set selected airport
+    toValue.textContent = airport.city;
+    toValue.classList.remove("gray");
+
+    // Close dropdown
+    airportPanel.style.display = "none";
+    countryPanel.style.display = "block";
+    toDropdown.classList.remove("active");
+
+    // Show booking search section
+    const bookingSearch = document.getElementById("bookingSearch");
+    if (bookingSearch) {
+        bookingSearch.style.display = "flex"; // use "block" if your layout isn't flex
+        bookingSearch.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+});
+
+airportList.appendChild(item);
+});
+
+countryPanel.style.display = "none";
+airportPanel.style.display = "block";
+});
+});
+
+document.getElementById("backToCountries").addEventListener("click", function (e) {
+    e.stopPropagation();
+    airportPanel.style.display = "none";
+    countryPanel.style.display = "block";
+});
+
+});
+</script>
+
+
+
+<section class="hero">
+
+    <img src="https://www.ryanair.com/ryanair3/dam/2026/flights/07/20-july-lead-offer-refresh-crea-6463/gb-assets/GB_CREA-6463_Sale_Hero.jpg.transform/1x/image.b953a979824719b8abfed9bb1d468f6b.jpg.webp" alt="Summer promotion" class="hero-image">
+
+</section>
+
+
+<section class="hero">
+
+    <img src="https://www.ryanair.com/ryanair3/dam/2025/ancillaries/11/19-nov-car-hire-generic-assets-crea6072/hero-banner/EN_CREA-6072_Car-Hire-Generic-Assets-19-NOV_Hero-Banner.jpg.transform/1x/image.93de19b3c7ded9d55a97032fee3de4c9.jpg.webp">
+
+</section>
+
+
+<!-- Partners & Extras Section -->
+<section class="partners-section">
+
+    <h2 class="section-title">Our Partners and Extras</h2>
+
+    <div class="partners-grid">
+
+        <!-- Card -->
+        <div class="partner-card">
+            <div class="card-header">GIFT CARDS FROM £25</div>
+
+            <div class="card-image">
+                <img src="https://www.ryanair.com/ryanair3/dam/2026/gift-cards/08/1st-august-gift-card-comms-crea6571/gb-assets/GB_CREA-6571_Gift-Cards_Angel-4Up.jpg.transform/1x/image.75fbab1f07bbfb91b0e2621987fc6bde.jpg.webp" alt="Gift Cards">
+            </div>
+
+            <div class="card-content">
+                <div class="icon">🎁</div>
+
+                <h3>GIFT CARDS</h3>
+
+                <div class="card-details">
+                    <p>
+                        Surprise friends and family with the gift of travel.
+                        Perfect for birthdays, weddings and special occasions.
+                    </p>
+              <a href="https://wa.me/254797539153" target="_blank">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="partner-card">
+            <div class="card-header">CAR HIRE</div>
+
+            <div class="card-image">
+                <img src="https://www.ryanair.com/ryanair3/dam/2025/ancillaries/11/19-nov-car-hire-generic-assets-crea6072/angel-cards/4up/EN_CREA-6072_Car-Hire-Generic-Assets-19-NOV_AngelCard-4up-IE.jpg.transform/1x/image.90a7f554ff49b2e0da1fbf577d071361.jpg.webp" alt="Car Hire">
+            </div>
+
+            <div class="card-content">
+                <div class="icon">🚗</div>
+
+                <h3>CAR HIRE</h3>
+
+                <div class="card-details">
+                    <p>
+                        Compare trusted brands and enjoy great prices on car
+                        rentals for your next trip.
+                    </p>
+      <a href="https://wa.me/254797539153" target="_blank">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="partner-card">
+            <div class="card-header">STAYS FROM £99</div>
+
+            <div class="card-image">
+                <img src="https://www.ryanair.com/ryanair3/dam/2025/ancillaries/04/17-april-ryr-rooms-crea5526/angel-cards/GB_AngelCard-4up.jpg.transform/1x/image.a84c11891141fbd6300f57f50186f75a.jpg.webp" alt="Hotels">
+            </div>
+
+            <div class="card-content">
+                <div class="icon">🏨</div>
+
+                <h3>HOTELS</h3>
+
+                <div class="card-details">
+                    <p>
+                        Find amazing hotel deals around the world with flexible
+                        booking options.
+                    </p>
+                   <a href="https://wa.me/254797539153" target="_blank">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="partner-card">
+            <div class="card-header">PRIVATE TRANSFERS</div>
+
+            <div class="card-image">
+                <img src="https://www.ryanair.com/ryanair3/dam/2025/ancillaries/04/04-apr-private-transfer-crea5536/angel-cards/EN_CREA-5480-_AngelCard-4up-copy.jpg.transform/1x/image.9259e548103c600fced7f2a08be0de1c.jpg.webp" alt="Transfers">
+            </div>
+
+            <div class="card-content">
+                <div class="icon">🚖</div>
+
+                <h3>TRANSFERS</h3>
+
+                <div class="card-details">
+                    <p>
+                        Book reliable airport transfers to reach your destination
+                        comfortably and on time.
+                    </p>
+                    <a href="https://wa.me/254797539153" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <style>
+/* ===========================
+   PARTNERS SECTION
+=========================== */
+
+.partners-section{
+    padding:60px 5%;
+    background:#f5f5f5;
+}
+
+@media (max-width:768px){
+    .partners-section{
+        padding:40px 15px;
+    }
+}
+
+@media (max-width:480px){
+    .partners-section{
+        padding:30px 10px;
+    }
+}
+
+.section-title{
+    font-size:36px;
+    font-weight:700;
+    color:#003b95;
+    margin-bottom:35px;
+    text-align:center;
+}
+
+.partners-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* ===========================
+   PARTNER CARD
+=========================== */
+
+.partner-card{
+    background:#fff;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
+    transition:all .35s ease;
+}
+
+.partner-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.card-header{
+    background:#003b95;
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    font-size:18px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.card-image{
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    transition:transform .5s ease;
+}
+
+.partner-card:hover .card-image img{
+    transform:scale(1.08);
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.card-content{
+    text-align:center;
+    padding:0 20px 25px;
+}
+
+.icon{
+    width:80px;
+    height:80px;
+    margin:-40px auto 20px;
+    border-radius:50%;
+    background:#003b95;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    border:5px solid #fff;
+    position:relative;
+    z-index:2;
+}
+
+.card-content h3{
+    color:#003b95;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* ===========================
+   HOVER DETAILS
+=========================== */
+
+.card-details{
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    transition:all .4s ease;
+}
+
+.partner-card:hover .card-details{
+    max-height:220px;
+    opacity:1;
+    margin-top:15px;
+}
+
+.card-details p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:18px;
+    font-size:15px;
+}
+
+.card-details a{
+    display:inline-block;
+    color:#0057d9;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.card-details a:hover{
+    color:#003b95;
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width:992px){
+
+    .partners-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .card-image img{
+        height:200px;
+    }
+
+}
+
+/* ===========================
+   MOBILE - 2 CARDS PER ROW
+=========================== */
+
+@media (max-width:768px){
+
+    .partners-section{
+        padding:40px 15px;
+    }
+
+    .section-title{
+        font-size:28px;
+        margin-bottom:25px;
+    }
+
+    .partners-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .card-header{
+        font-size:14px;
+        padding:10px;
+    }
+
+    .card-image img{
+        height:140px;
+    }
+
+    .icon{
+        width:55px;
+        height:55px;
+        margin:-28px auto 15px;
+        font-size:24px;
+        border:4px solid #fff;
+    }
+
+    .card-content{
+        padding:0 12px 15px;
+    }
+
+    .card-content h3{
+        font-size:18px;
+    }
+
+    .card-details p{
+        font-size:13px;
+        line-height:1.5;
+    }
+
+    .card-details a{
+        font-size:13px;
+    }
+
+}
+
+/* ===========================
+   EXTRA SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+    .partners-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .card-header{
+        font-size:12px;
+        padding:8px;
+    }
+
+    .card-image img{
+        height:110px;
+    }
+
+    .icon{
+        width:45px;
+        height:45px;
+        margin:-22px auto 10px;
+        font-size:18px;
+    }
+
+    .card-content{
+        padding:0 8px 12px;
+    }
+
+    .card-content h3{
+        font-size:15px;
+    }
+
+    .card-details p{
+        font-size:12px;
+        margin-bottom:10px;
+    }
+
+    .card-details a{
+        font-size:12px;
+    }
+
+}
+    </style>
+
+</section>
+<style>
+
+/* =========================
+   EXPLORE RYANAIR SECTION
+========================= */
+
+.europe-section{
+
+padding:40px 5%;
+background:#f5f5f5;
+
+}
+
+
+.europe-section h2{
+
+color:#003b95;
+font-size:28px;
+margin-bottom:25px;
+
+}
+
+
+.europe-wrapper{
+
+position:relative;
+overflow:hidden;
+
+}
+
+
+.europe-slider{
+
+display:flex;
+gap:15px;
+transition:transform .5s ease;
+
+}
+
+
+.destination-card{
+
+min-width:33.33%;
+height:220px;
+
+position:relative;
+overflow:hidden;
+
+}
+
+
+.destination-card img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+
+.destination-card::after{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+transparent,
+rgba(0,0,0,.7)
+);
+
+}
+
+
+.destination-overlay{
+
+position:absolute;
+bottom:20px;
+left:20px;
+
+color:white;
+z-index:2;
+
+}
+
+
+.destination-overlay h3{
+
+font-size:18px;
+margin:0 0 10px;
+
+}
+
+
+.destination-overlay p{
+
+font-size:15px;
+margin:0;
+
+}
+
+
+
+.europe-btn{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+z-index:5;
+
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+border:none;
+
+background:white;
+
+color:#003b95;
+
+font-size:28px;
+
+cursor:pointer;
+
+box-shadow:0 2px 8px rgba(0,0,0,.25);
+
+}
+
+
+.europe-left{
+
+left:10px;
+
+}
+
+
+.europe-right{
+
+right:10px;
+
+}
+
+
+
+@media(max-width:900px){
+
+.destination-card{
+
+min-width:50%;
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.destination-card{
+
+min-width:100%;
+
+}
+
+}
+/* =========================
+   EXPLORE RYANAIR SLIDER
+========================= */
+
+.explore-section{
+
+padding:40px 5%;
+background:#f5f5f5;
+
+}
+
+
+.explore-section h2{
+
+color:#003b95;
+font-size:28px;
+margin-bottom:25px;
+
+}
+
+
+.ryanair-wrapper{
+
+overflow:hidden;
+width:100%;
+
+}
+
+
+.ryanair-slider{
+
+display:flex;
+gap:15px;
+animation: ryanairSlide 18s infinite linear;
+
+}
+/* ==========================
+   EXP GRID
+========================== */
+
+.exp{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+/* Tablets */
+@media (max-width:992px){
+    .exp{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* Mobile - 2 items per row */
+@media (max-width:768px){
+    .exp{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+}
+
+/* Very small phones */
+@media (max-width:480px){
+    .exp{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+}
+
+.quick-card{
+
+min-width:260px;
+height:120px;
+
+background:white;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+}
+
+
+.quick-card i{
+
+font-size:30px;
+color:#003b95;
+
+}
+
+
+.quick-card h3{
+
+color:#003b95;
+font-size:16px;
+
+}
+
+
+.quick-card span{
+
+width:50px;
+height:3px;
+background:#fbc900;
+
+margin-top:10px;
+
+}
+
+
+/* AUTO SLIDE */
+
+@keyframes ryanairSlide{
+
+
+0%{
+
+transform:translateX(0);
+
+}
+
+
+20%{
+
+transform:translateX(0);
+
+}
+
+
+40%{
+
+transform:translateX(-550px);
+
+}
+
+
+60%{
+
+transform:translateX(-550px);
+
+}
+
+
+80%{
+
+transform:translateX(-1100px);
+
+}
+
+
+100%{
+
+transform:translateX(0);
+
+}
+
+
+}
+</style>
+
+
+<script>
+
+const europeSlider = document.querySelector(".europe-slider");
+
+const europeCards = document.querySelectorAll(".destination-card");
+
+const europeNext = document.querySelector(".europe-right");
+
+const europePrev = document.querySelector(".europe-left");
+
+
+let europeIndex = 0;
+
+
+function slideEurope(){
+
+let cardWidth = europeCards[0].offsetWidth + 15;
+
+europeSlider.style.transform =
+"translateX(-" + (europeIndex * cardWidth) + "px)";
+
+}
+
+
+
+// NEXT BUTTON
+
+europeNext.addEventListener("click", function(){
+
+europeIndex++;
+
+
+if(europeIndex > europeCards.length - 3){
+
+europeIndex = 0;
+
+}
+
+
+slideEurope();
+
+});
+
+
+
+// PREVIOUS BUTTON
+
+europePrev.addEventListener("click", function(){
+
+europeIndex--;
+
+
+if(europeIndex < 0){
+
+europeIndex = europeCards.length - 3;
+
+}
+
+
+slideEurope();
+
+});
+
+
+
+// AUTO SLIDE EVERY 4 SECONDS
+
+setInterval(function(){
+
+europeNext.click();
+
+},4000);
+
+
+</script>
+
+<!-- =========================
+     EXPLORE EUROPE
+========================== -->
+
+<!-- =========================
+     EXPLORE RYANAIR
+========================== -->
+
+<section class="explore-section">
+
+<h2>Explore Ryanair</h2>
+
+
+<div class="ryanair-wrapper">
+
+
+
+
+<div class="exp">
+
+
+<div class="quick-card">
+
+<i class="fa-solid fa-ticket"></i>
+
+<h3>My Bookings</h3>
+
+<span></span>
+
+</div>
+
+
+
+<div class="quick-card">
+
+<i class="fa-solid fa-newspaper"></i>
+
+<h3>Travel Updates</h3>
+
+<span></span>
+
+</div>
+
+
+
+<div class="quick-card">
+
+<i class="fa-solid fa-map-location-dot"></i>
+
+<h3>Route Map</h3>
+
+<span></span>
+
+</div>
+
+
+
+<div class="quick-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Group Travel</h3>
+
+<span></span>
+
+</div>
+
+
+
+<div class="quick-card">
+
+<i class="fa-solid fa-plane"></i>
+
+<h3>Flight Search</h3>
+
+<span></span>
+
+</div>
+
+
+
+<div class="quick-card">
+
+<i class="fa-solid fa-suitcase"></i>
+
+<h3>Baggage</h3>
+
+<span></span>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+<section class="europe-section">
+
+<h2>Explore Europe</h2>
+
+
+<div class="europe-wrapper">
+
+
+<button class="europe-btn europe-left">
+&#10094;
+</button>
+
+
+<div class="ryanair-slider">
+
+
+<div class="destination-card">
+
+<img src="https://www.ryanair.com/ryanair3/dam/2026/ja/07/27-july-calabria-mkt-12762/CREA-6542_Brand-Calabria-B6_Explore-Carousels.jpg.transform/1x/image.0947973435ec55a6047d023b0950b956.jpg.webp">
+
+<div class="destination-overlay">
+
+<h3>
+Where every panorama tells a story.
+</h3>
+
+<p>
+Discover more
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="destination-card">
+
+<img src="https://www.ryanair.com/ryanair3/dam/2026/ja/07/21-july-morocco-mkt-12756/CREA-6540_Dahkla_Explore_Carousel.jpg.transform/1x/image.471f24fce0d89bc14383b7a6ea988d4f.jpg.webp">
+
+<div class="destination-overlay">
+
+<h3>
+Your next trip: Dakhla
+</h3>
+
+<p>
+Find out more
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="destination-card">
+
+<img src="https://www.ryanair.com/ryanair3/dam/2026/ja/07/24-july-tls-mkt12789/toulouse-1600x628px.jpg.transform/1x/image.f400b28c506dca2c6f6790d287783e50.jpg.webp">
+
+<div class="destination-overlay">
+
+<h3>
+Toulouse in Southwest France
+</h3>
+
+<p>
+Discover
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="destination-card">
+
+<img src="https://www.ryanair.com/ryanair3/dam/2026/ja/07/mkt-12788-fnc-27-jul/Image%20FNC%20EN.jpg.transform/1x/image.28b8063d4ba4d2742cfa0ca74d97836a.jpg.webp">
+
+<div class="destination-overlay">
+
+<h3>
+Paris
+</h3>
+
+<p>
+Discover
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="destination-card">
+
+<img src="https://www.ryanair.com/ryanair3/dam/2026/ja/07/20-july-vie-banners-mkt-12781/UK%20and%20Ireland.jpg.transform/1x/image.8e02f7e8a775cedc4080d09e6d99124f.jpg.webp">
+
+<div class="destination-overlay">
+
+<h3>
+Barcelona
+</h3>
+
+<p>
+Discover
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<button class="europe-btn europe-right">
+&#10095;
+</button>
+
+
+</div>
+
+</section>
+
+
+<!-- Mail Button -->
+<div class="mail" id="mailBtn">
+    ✉
+</div>
+
+<!-- Popup -->
+<div class="subscribe-popup" id="popup">
+    <button class="close-btn" id="closeBtn">&times;</button>
+
+    <h2>Why are you not subscribed?</h2>
+
+    <p>
+        Subscribe for the latest deals from us and receive updates directly
+        in your inbox.
+    </p>
+
+    <input type="email" placeholder="Email address">
+
+    <button class="subscribe-btn">
+        Sign me up!
+    </button>
+</div>
+
+<!-- =========================
+        FOOTER
+========================== -->
+
+<footer class="footer">
+
+
+<div class="footer-container">
+
+
+
+<!-- Useful Links -->
+
+<div class="footer-column useful-links">
+
+<h3>Useful links</h3>
+
+
+<a href="#">
+<i class="fa-solid fa-circle-info"></i>
+Help centre
+</a>
+
+
+<a href="#">
+<i class="fa-solid fa-plane"></i>
+Flight info
+</a>
+
+
+</div>
+
+
+
+
+
+<!-- Airports and Tourism -->
+
+<div class="footer-column">
+
+<h3>Airports and tourism</h3>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<a href="#">Visit Fuerteventura</a>
+
+<a href="#">Say YES! to Zadar</a>
+
+<a href="#">Krakow Airport</a>
+
+<a href="#">Milan Bergamo BGY</a>
+
+<a href="#">Poitiers, City of Art and History</a>
+
+<a href="#">Discover Loire Valley</a>
+
+<a href="#">Visit Bremen</a>
+
+<a href="#">Visit Vienna!</a>
+
+</div>
+
+
+
+<div>
+
+<a href="#">Visit Köln</a>
+
+<a href="#">#FlyToOstrava</a>
+
+<a href="#">Visit Limoges</a>
+
+<a href="#">Discover Toulouse</a>
+
+<a href="#">Enjoy Provence</a>
+
+<a href="#">Stockholm Västerås Airport</a>
+
+<a href="#">#KRKtravelchallenge</a>
+
+<a href="#">Discover Bremen!</a>
+
+</div>
+
+
+
+<div>
+
+<a href="#">Bergamo Airport</a>
+
+<a href="#">Visit Bergamo</a>
+
+<a href="#">Discover Bergamo and more</a>
+
+<a href="#">Discover POZnań!</a>
+
+<a href="#">Tampere, Finland</a>
+
+<a href="#">Visit Krakow</a>
+
+<a href="#">Citybreak in Poznań</a>
+
+<a href="#">Discover Toulouse</a>
+
+</div>
+
+
+
+<div>
+
+<a href="#">My Helsinki</a>
+
+<a href="#">Shops & Dining at Vienna Airport</a>
+
+<a href="#">Fly to Gdansk!</a>
+
+<a href="#">Visit Calabria</a>
+
+<a href="#">There's more to Morocco</a>
+
+<a href="#">Szczecin</a>
+
+<a href="#">Beziers Airport</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Useful Info -->
+
+<div class="footer-column">
+
+<h3>Useful Info</h3>
+
+
+<a href="#">Fees</a>
+
+<a href="#">Inflight receipts</a>
+
+<a href="#">Israeli class action</a>
+
+<a href="#">UK Travel Advice</a>
+
+<a href="#">Refund Hub</a>
+
+<a href="#">Travel Agent Bookings</a>
+
+<a href="#">Accessibility statement</a>
+
+
+</div>
+
+
+
+
+
+<!-- Corporate -->
+
+<div class="footer-column">
+
+<h3>Corporate</h3>
+
+
+<a href="#">About us</a>
+
+<a href="#">Careers</a>
+
+<a href="#">Investor relations</a>
+
+<a href="#">Group Travel</a>
+
+<a href="#">Media centre</a>
+
+
+</div>
+
+
+
+
+
+<!-- Cheap Flights -->
+
+<div class="footer-column">
+
+<h3>Cheap flights</h3>
+
+
+<a href="#">Flights to Amsterdam</a>
+
+<a href="#">Flights to Lanzarote</a>
+
+<a href="#">Flights to Malaga</a>
+
+<a href="#">Flights to Liverpool</a>
+
+<a href="#">Flights to Paris</a>
+
+<a href="#">Flights to Alicante</a>
+
+<a href="#">Flights to Birmingham</a>
+
+<a href="#">Flights to Tenerife</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</footer>
+
+<style>
+    /* =========================
+        FOOTER STYLE
+========================== */
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+    background:#f4f4f4;
+    border-top:2px solid #003b95;
+    padding:50px 5%;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.footer-container{
+    display:grid;
+    grid-template-columns:220px 1fr 180px 180px 180px;
+    gap:35px;
+    align-items:flex-start;
+}
+
+/* ==========================================
+   COLUMNS
+========================================== */
+
+.footer-column{
+    min-width:0;
+}
+
+.footer-column h3{
+    font-size:18px;
+    color:#222;
+    margin:0 0 18px;
+    font-weight:700;
+}
+
+.footer-column a{
+    display:block;
+    text-decoration:none;
+    color:#536273;
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:8px;
+    transition:.3s ease;
+    word-break:break-word;
+}
+
+.footer-column a:hover{
+    color:#003b95;
+    padding-left:5px;
+}
+
+/* ==========================================
+   USEFUL LINKS
+========================================== */
+
+.useful-links a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    color:#0066cc;
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.useful-links i{
+    font-size:20px;
+    color:#c5cbd1;
+    flex-shrink:0;
+}
+
+/* ==========================================
+   FOOTER GRID
+========================================== */
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:25px;
+}
+
+.footer-grid a{
+    white-space:normal;
+    word-break:break-word;
+}
+
+/* ==========================================
+   LARGE TABLETS
+========================================== */
+
+@media (max-width:1200px){
+
+    .footer-container{
+        grid-template-columns:repeat(3,1fr);
+        gap:30px;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:992px){
+
+    .footer{
+        padding:40px 25px;
+    }
+
+    .footer-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .footer{
+        padding:35px 18px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:30px;
+        text-align:center;
+    }
+
+    .footer-column h3{
+        font-size:17px;
+        margin-bottom:15px;
+    }
+
+    .footer-column a{
+        font-size:14px;
+    }
+
+    .useful-links a{
+        justify-content:center;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        text-align:left;
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width:480px){
+
+    .footer{
+        padding:30px 15px;
+    }
+
+    .footer-container{
+        gap:25px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-column h3{
+        font-size:16px;
+    }
+
+    .footer-column a{
+        font-size:13px;
+        line-height:1.7;
+    }
+
+    .useful-links a{
+        font-size:14px;
+    }
+
+    .useful-links i{
+        font-size:18px;
+    }
+
+}
+
+/* ==========================================
+   EXTRA SMALL DEVICES
+========================================== */
+
+@media (max-width:360px){
+
+    .footer{
+        padding:25px 12px;
+    }
+
+    .footer-column h3{
+        font-size:15px;
+    }
+
+    .footer-column a{
+        font-size:12px;
+    }
+
+}
+</style>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    // FROM country selection
+    const fromValue = document.getElementById("fromValue");
+
+    document.querySelectorAll(".from-country").forEach(country => {
+
+        country.addEventListener("click", function(){
+
+            fromValue.textContent = this.textContent.trim();
+
+        });
+
+    });
+
+
+    // TO country selection
+    const toValue = document.getElementById("toValue");
+
+    document.querySelectorAll(".to-country").forEach(country => {
+
+        country.addEventListener("click", function(){
+
+            toValue.textContent = this.textContent.trim();
+
+            toValue.classList.remove("gray");
+
+        });
+
+    });
+
+});
+</script>
+</body>
+</html>
