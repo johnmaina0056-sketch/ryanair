@@ -71,7 +71,83 @@ iframe{
 }
 
 
+/* ==========================
+   MOBILE NAVIGATION FIX
+========================== */
 
+@media(max-width:768px){
+
+    body{
+        padding:0;
+    }
+
+
+    .top{
+        width:100%;
+        padding:12px 10px;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:12px;
+    }
+
+
+    .logo{
+        font-size:20px;
+        justify-content:center;
+    }
+
+
+    .nav-menu{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:6px;
+    }
+
+
+    .nav-menu a{
+        width:100%;
+        text-align:center;
+        padding:8px;
+        font-size:14px;
+        background:rgba(255,255,255,.08);
+        border-radius:5px;
+    }
+
+
+    .portal{
+        width:100%;
+        max-width:250px;
+        padding:9px;
+    }
+
+
+}
+
+
+/* Small phones */
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:18px;
+    }
+
+
+    .nav-menu a{
+        font-size:13px;
+        padding:7px;
+    }
+
+
+    .portal{
+        font-size:13px;
+    }
+
+}
 /* ==========================
    TOP NAVIGATION
 ========================== */
