@@ -1980,33 +1980,99 @@ min-width:100%;
 
 }
 /* =========================
-   EXPLORE RYANAIR SLIDER
+   EXPLORE RYANAIR GRID
 ========================= */
 
 .explore-section{
-
-padding:40px 5%;
-background:#f5f5f5;
-
+    padding:40px 5%;
+    background:#f5f5f5;
+    overflow-x:hidden;
 }
-
 
 .explore-section h2{
-
-color:#003b95;
-font-size:28px;
-margin-bottom:25px;
-
+    color:#003b95;
+    font-size:28px;
+    margin-bottom:25px;
+    text-align:center;
 }
 
-
-.ryanair-wrapper{
-
-overflow:hidden;
-width:100%;
-
+/* Grid container */
+.ryanair-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 20px;
+    width: 100%;
 }
 
+/* Card */
+.ryanair-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.ryanair-card:hover {
+    transform: translateY(-5px);
+}
+
+.ryanair-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.ryanair-card .info {
+    padding: 12px;
+}
+
+.ryanair-card h3 {
+    color: #003b95;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.ryanair-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 992px) {
+    .ryanair-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 768px) {
+    .explore-section {
+        padding: 30px 4%;
+    }
+
+    .explore-section h2 {
+        font-size: 22px;
+    }
+
+    .ryanair-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .ryanair-card img {
+        height: 130px;
+    }
+
+    .ryanair-card h3 {
+        font-size: 14px;
+    }
+
+    .ryanair-card p {
+        font-size: 12px;
+    }
+}
 
 .ryanair-slider{
 
@@ -2014,84 +2080,147 @@ display:flex;
 gap:15px;
 animation: ryanairSlide 18s infinite linear;
 
-}
-/* ==========================
-   EXP GRID
+}/* ==========================
+   EXPLORE RYANAIR GRID
 ========================== */
 
 .exp{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    grid-template-columns:repeat(4, minmax(220px, 1fr));
+    gap:24px;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    align-items:stretch;
 }
 
-/* Tablets */
-@media (max-width:992px){
+/* Cards */
+.quick-card{
+    width:100%;
+    background:#fff;
+    border-radius:20px;
+    padding:30px 22px;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    box-sizing:border-box;
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.quick-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 32px rgba(0,0,0,0.12);
+}
+
+.quick-card i{
+    font-size:42px;
+    color:#003b95;
+    margin-bottom:16px;
+}
+
+.quick-card h3{
+    color:#003b95;
+    font-size:20px;
+    font-weight:700;
+    margin:0;
+    line-height:1.35;
+}
+
+.quick-card span{
+    width:60px;
+    height:4px;
+    background:#fbc900;
+    border-radius:999px;
+    margin-top:16px;
+}
+
+/* Large desktop */
+@media (min-width:1400px){
     .exp{
-        grid-template-columns:repeat(3,1fr);
+        max-width:1320px;
+        grid-template-columns:repeat(4, 1fr);
+    }
+
+    .quick-card{
+        min-height:190px;
     }
 }
 
-/* Mobile - 2 items per row */
+/* Tablet */
+@media (max-width:992px){
+    .exp{
+        grid-template-columns:repeat(3, minmax(180px, 1fr));
+        gap:18px;
+        max-width:900px;
+    }
+
+    .quick-card{
+        min-height:160px;
+        padding:24px 18px;
+    }
+
+    .quick-card i{
+        font-size:36px;
+    }
+
+    .quick-card h3{
+        font-size:17px;
+    }
+}
+
+/* Mobile */
 @media (max-width:768px){
     .exp{
-        grid-template-columns:repeat(2,1fr);
+        display:flex;
+        flex-wrap:wrap;
         gap:12px;
+        max-width:100%;
+    }
+
+    .quick-card{
+        flex:0 0 calc(50% - 6px);
+        width:calc(50% - 6px);
+        min-height:130px;
+        padding:18px 12px;
+        border-radius:16px;
+    }
+
+    .quick-card i{
+        font-size:28px;
+        margin-bottom:10px;
+    }
+
+    .quick-card h3{
+        font-size:14px;
+    }
+
+    .quick-card span{
+        width:44px;
+        margin-top:10px;
     }
 }
 
 /* Very small phones */
 @media (max-width:480px){
     .exp{
-        grid-template-columns:repeat(2,1fr);
         gap:10px;
     }
+
+    .quick-card{
+        flex:0 0 calc(50% - 5px);
+        width:calc(50% - 5px);
+        min-height:120px;
+        padding:16px 10px;
+    }
+
+    .quick-card h3{
+        font-size:13px;
+    }
 }
-
-.quick-card{
-
-min-width:260px;
-height:120px;
-
-background:white;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-
-}
-
-
-.quick-card i{
-
-font-size:30px;
-color:#003b95;
-
-}
-
-
-.quick-card h3{
-
-color:#003b95;
-font-size:16px;
-
-}
-
-
-.quick-card span{
-
-width:50px;
-height:3px;
-background:#fbc900;
-
-margin-top:10px;
-
-}
-
-
 /* AUTO SLIDE */
 
 @keyframes ryanairSlide{
