@@ -17,7 +17,7 @@ body{
 
 body{
     margin:0;
-    padding:2px;
+    padding: 0;
     min-height:100vh;
     background:#f4f4f4;
     font-family:Arial, Helvetica, sans-serif;
@@ -70,7 +70,6 @@ iframe{
 .container{
     width:100%;
     max-width:1200px;
-    margin:0 auto;
     padding:0 20px;
 }
 
@@ -366,91 +365,115 @@ iframe{
 
 }
 
-
-
 /* ==========================
    SEARCH AREA
 ========================== */
 
 .search-area{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     margin-top:25px;
-
     width:100%;
-
+    flex-wrap:nowrap; /* always keep one line */
 }
-
 
 .field{
-
-    background:white;
-
+    background:#fff;
     color:#111;
-
     height:58px;
-
-    flex:1;
-
-    padding:8px 18px;
-
-    border-radius:6px;
-
+    flex:1 1 0;
+    min-width:0; /* allows shrinking on mobile */
+    padding:8px 16px;
+    border-radius:8px;
+    box-sizing:border-box;
 }
 
+.field small{
+    display:block;
+    font-size:11px;
+    color:#666;
+}
 
+.field p{
+    margin:2px 0 0;
+    font-size:15px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
 
 /* ==========================
    TABLETS
 ========================== */
 
-@media(max-width:992px){
-
-
+@media (max-width:992px){
     .nav-menu{
-
         gap:10px;
-
     }
-
 
     .tabs{
-
         gap:18px;
-
     }
 
-
+    .search-area{
+        gap:8px;
+    }
 }
-
-
 
 /* ==========================
    MOBILE
 ========================== */
 
-@media(max-width:768px){
-
-
+@media (max-width:768px){
     .top{
-
         flex-direction:column;
-
         align-items:center;
-
         justify-content:center;
-
         padding:12px;
-
         gap:12px;
-
     }
 
+    .search-area{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        gap:6px;
+        width:100%;
+    }
+
+    .field{
+        flex:1 1 0;
+        min-width:0;
+        height:54px;
+        padding:6px 10px;
+        border-radius:8px;
+    }
+
+    .field small{
+        font-size:10px;
+    }
+
+    .field p{
+        font-size:13px;
+    }
+}
+
+/* Very small phones */
+@media (max-width:480px){
+    .search-area{
+        gap:4px;
+    }
+
+    .field{
+        height:50px;
+        padding:5px 8px;
+    }
+
+    .field p{
+        font-size:12px;
+    }
+}
 
     .nav-menu{
 
