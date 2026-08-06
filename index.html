@@ -509,17 +509,9 @@ document.getElementById("searchBtn").addEventListener("click", function () {
     const from = document.getElementById("fromValue").textContent.trim();
     const to = document.getElementById("toValue").textContent.trim();
 
-    const depart = document.getElementById("departDate")
-        ? document.getElementById("departDate").value
-        : "";
-
-    const returnDate = document.getElementById("returnDate")
-        ? document.getElementById("returnDate").value
-        : "";
-
-    const passengers = document.getElementById("passengerValue")
-        ? document.getElementById("passengerValue").textContent.trim()
-        : "";
+    const depart = document.getElementById("departDate").value;
+    const returnDate = document.getElementById("returnDate").value;
+    const passengers = document.getElementById("adultCount").value;
 
     // Validation
     if (!depart) {
@@ -532,23 +524,19 @@ document.getElementById("searchBtn").addEventListener("click", function () {
         return;
     }
 
-    if (
-        !passengers ||
-        passengers === "Passengers" ||
-        passengers === "Select Passengers" ||
-        passengers === "0 Adults"
-    ) {
-        alert("Please select the number of adults.");
+    if (!passengers) {
+        alert("Please select the number of passengers.");
         return;
     }
 
     const message = encodeURIComponent(
-        `Flight Booking Request\n\n` +
-        `From Airport: ${from}\n` +
-        `To Airport: ${to}\n` +
-        `Departure Date: ${depart}\n` +
-        `Return Date: ${returnDate}\n` +
-        `Passengers: ${passengers}`
+        `Flight Booking Request
+
+From Airport: ${from}
+To Airport: ${to}
+Departure Date: ${depart}
+Return Date: ${returnDate}
+Passengers: ${passengers}`
     );
 
     window.open(`https://wa.me/254797539153?text=${message}`, "_blank");
