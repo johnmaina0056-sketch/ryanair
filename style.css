@@ -368,15 +368,7 @@ iframe{
 /* ==========================
    SEARCH AREA
 ========================== */
-
-.search-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-top:25px;
-    width:100%;
-    flex-wrap:nowrap; /* always keep one line */
-}
+.search-area{ display:flex; align-items:center; gap:10px; margin-top:25px; width:100%; }
 
 .field{
     background:#fff;
